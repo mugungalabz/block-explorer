@@ -16,14 +16,12 @@ async function getBlock(block_num) {
 
 async function getCurrentBlock() {
     let curr_block_num = await provider.getBlockNumber();
-    // console.log("currBlock:", currBlock)
     return await getBlock(curr_block_num);
 }
 
 const Block = () => {
-    // const [block, setBlock] = React.useState(new Block());
     const [block, setBlock] = useState({});
-    const [parentBlocks, setParentBlocks] = useState([]);
+    // const [parentBlocks, setParentBlocks] = useState([]);
     useEffect(() => {
         async function fetchCurrentBlock() {
             let currentBlock = getCurrentBlock();
